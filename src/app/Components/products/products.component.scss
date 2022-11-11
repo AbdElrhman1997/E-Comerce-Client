@@ -1,0 +1,64 @@
+@import '../../../styles.scss';
+.products {
+  margin: 100px 0;
+  min-height: 100vh;
+  div {
+    width: fit-content;
+    margin: auto;
+  }
+  .container {
+    .DropdownCont{
+      position: relative;
+      .dropdown {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100px;
+      }
+      .bg-brand {
+        background-color: $brandColor;
+        width: 100px;
+      }
+    }
+    .prContainer {
+      padding: 50px;
+      .product {
+        height: fit-content;
+        text-align: center;
+        .prCategory,.prName,.prPrice {
+          margin: 7px auto;
+        }
+        img {
+          width: 330px;
+          height: 330px;
+          cursor: pointer;
+        }
+        img:hover {
+          opacity: .9;
+        }
+      }
+      .addToCart {
+        padding: 7px 10px;
+        color: $brandColor;
+        border: 3px solid $brandColor;
+        font-weight: 600;
+      }
+      .addToCart:hover {
+        background-color: $brandColor;
+        color: white;
+      }
+      @media (max-width:776px) {
+        .product {
+          margin-bottom: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+    .my-pagination ::ng-deep .ngx-pagination .current {
+      background-color: $brandColor;
+    }
+  }
+}

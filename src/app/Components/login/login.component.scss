@@ -1,0 +1,22 @@
+@import '../../../styles.scss';
+section {
+  div {
+    div {
+      div {
+        form {
+          .text-brand {
+            color: $brandColor;
+          }
+          .bg-brand {
+            background-color: $brandColor;
+            color:white;
+            cursor: pointer;
+          }
+          .bg-brand:hover {
+            background-color:rgb(155, 3, 3);
+          }
+        }
+      }
+    }
+  }
+}

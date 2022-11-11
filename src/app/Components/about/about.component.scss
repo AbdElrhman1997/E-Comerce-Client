@@ -1,0 +1,38 @@
+@import '../../../styles.scss';
+.about {
+  min-height: 78vh;
+  width: 100%;
+  div:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .aboutImg {
+      margin: 8px;
+      width: 90%;
+      height: 90%;
+      padding: 70px;
+    }
+  }
+  div:last-child{
+    margin-top: 3vh;
+    width: 90%;
+    .btn {
+      padding: 8px;
+      background-color: $brandColor;
+      font-weight: bold;
+      color: white;
+      width: fit-content;
+      font-size: 20px;
+      margin: 25px 0;
+      cursor: pointer;
+      transition: .1s ease-in-out;
+      border-radius: 4px;
+    }
+    .btn:hover {
+      background-color: transparent;
+      color: $brandColor;
+      outline: 3px solid $brandColor;
+      border-radius: 4px;
+    }
+  }
+}

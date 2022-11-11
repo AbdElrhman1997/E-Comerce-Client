@@ -9,14 +9,14 @@ import { AboutComponent } from './Components/about/about.component';
 import { MyAccountComponent } from './Components/my-account/my-account.component';
 import { MainLayOutComponent } from './Components/main-lay-out/main-lay-out.component';
 import { FooterComponent } from './Components/footer/footer.component';
-// import { ProductsComponent } from './Components/products/products.component';
-// import { ProductDetailsComponent } from './Components/product-details/product-details.component';
-// import { LoginComponent } from './Components/login/login.component';
-// import { RegisterComponent } from './Components/register/register.component';
-// import { CartComponent } from './Components/cart/cart.component';
-// import { ProductComponent } from './Components/product/product.component';
-// import { OrdersComponent } from './Components/orders/orders.component';
-// import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { ProductsComponent } from './Components/products/products.component';
+import { ProductDetailsComponent } from './Components/product-details/product-details.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { ProductComponent } from './Components/product/product.component';
+import { OrdersComponent } from './Components/orders/orders.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +27,14 @@ import { FooterComponent } from './Components/footer/footer.component';
     MyAccountComponent,
     MainLayOutComponent,
     FooterComponent,
-    // ProductsComponent,
-    // ProductDetailsComponent,
-    // LoginComponent,
-    // RegisterComponent,
-    // CartComponent,
-    // ProductComponent,
-    // OrdersComponent,
-    // NotFoundComponent,
+    ProductsComponent,
+    ProductDetailsComponent,
+    LoginComponent,
+    RegisterComponent,
+    CartComponent,
+    ProductComponent,
+    OrdersComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

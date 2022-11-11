@@ -1,0 +1,21 @@
+<section class="prDetails">
+  <div class="container mx-auto lg:grid md:grid grid-cols-12">
+    <img src="{{product.imgSrc}}" alt="" class="col-span-6" />
+    <div class="prContainer col-span-6">
+      <!-- <div class="prCategory text-gray-500 text-2xl">{{product.category}}</div> -->
+      <div class="prName font-medium text-3xl">{{product.name}}</div>
+      <div class="prDescription">{{product.description}}</div>
+      <div class="prPrice font-bold text-xl">{{product.price|currency}}</div>
+      <button class="addToCart" (click)="isAdded=true" *ngIf="!isAdded">
+        ADD TO CART
+      </button>
+      <div class="flex justify-center" *ngIf="isAdded">
+        <input type="number" [(ngModel)]="amount"
+          class="w-1/3 border border-gray-300 text-gray-900 text-sm h-fit p-2.5">
+        <button class="addToCart" (click)="addToCart(product)">
+          ADD TO CART
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

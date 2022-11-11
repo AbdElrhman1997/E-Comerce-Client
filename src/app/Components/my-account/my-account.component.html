@@ -1,0 +1,21 @@
+<section class="myAccount">
+  <div class="py-12 h-screen bg-gray-300">
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-md">
+      <div class="md:flex">
+        <div class="w-full p-2 py-10">
+          <div class="flex justify-center">
+            <div class="relative">
+              <div class="rounded-full img" width="80">{{letterImg}}</div>
+            </div>
+          </div>
+          <div class="flex flex-col text-center mt-3 mb-4">
+            <span class="text-2xl font-medium">{{user.userName}}</span>
+            <span class="text-md text-gray-400">{{user.email}}</span>
+          </div>
+          <a routerLink="/Login" (click)="LogOut()"
+            class="mx-auto flex justify-center items-center text-xl h-12 bg-brand w-1/2 text-white text-md rounded hover:shadow hover:bg-blue-800">LogOut</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

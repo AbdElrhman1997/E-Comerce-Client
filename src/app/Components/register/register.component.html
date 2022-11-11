@@ -1,0 +1,107 @@
+<section class="bg-gray-50 dark:bg-gray-900">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <div
+      class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+          Create and account
+        </h1>
+        <form [formGroup]="signupForm" (ngSubmit)="submitSignUp()" class="space-y-4 md:space-y-6" action="#">
+          <div>
+            <label for="userName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">userName
+            </label>
+            <input type="text" name="userName" id="userName" placeholder="Abdelrhman" formControlName="userName"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required="" minlength="3" maxlength="40">
+          </div>
+          <span *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)" class="text-red-600 m-0 p-0">
+            <div *ngIf="userName?.errors?.['required']">*Name is required.</div>
+            <div *ngIf="userName?.errors?.['minlength']">
+              *Name must be at least 3 characters long.
+            </div>
+            <div *ngIf="userName?.errors?.['maxlength']">
+              *Name must be at most 40 characters long.
+            </div>
+          </span>
+          <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+            <input type="email" name="email" id="email" formControlName="email"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="name@company.com" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$">
+          </div>
+          <span *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-red-600 m-0 p-0">
+            <div *ngIf="
+              email?.errors?.['required']">
+              *Email is required.
+            </div>
+            <div *ngIf="
+              email?.errors?.['pattern']">
+              *Email most follow this pattern exapmle@gmail.com.
+            </div>
+          </span>
+          <span *ngIf="isRegister" class="text-red-600 m-0 p-0">
+            *This email already register
+          </span>
+          <div>
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+            <input type="password" name="password" id="password" placeholder="••••••••" formControlName="password"
+              required=""
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required="" minlength="8">
+          </div>
+          <span *ngIf="
+              password?.invalid && (password?.dirty || password?.touched)
+            " class="text-red-600 m-0 p-0">
+            <div *ngIf="password?.errors?.['required']">
+              *password is required.
+            </div>
+            <div *ngIf="password?.errors?.['minlength']">
+              *password must be at least 8 characters long.
+            </div>
+          </span>
+          <div>
+            <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm
+              password</label>
+            <input type="password" name="confirmPassword" id="confirm-password" placeholder="••••••••"
+              formControlName="confirmPassword"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required="" minlength="8">
+          </div>
+          <span *ngIf="
+              confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)
+            " class="text-red-600 m-0 p-0">
+            <div *ngIf="confirmPassword?.errors?.['required']">
+              *password is required.
+            </div>
+            <div *ngIf="confirmPassword?.errors?.['minlength']">
+              *password must be at least 8 characters long.
+            </div>
+          </span>
+          <span *ngIf="!isPassMatch" class="text-red-600 m-0 p-0">
+            *This password does not match
+          </span>
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input id="terms" aria-describedby="terms" type="checkbox"
+                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                required="">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="terms" class="font-light text-gray-500 dark:text-gray-300">I accept the <a
+                  class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and
+                  Conditions</a></label>
+            </div>
+          </div>
+          <button type="submit" [disabled]="signupForm.invalid"
+            class="bg-brand w-full focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create
+            an account</button>
+          <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+            Already have an account? <a href="#"
+              class="font-medium text-primary-600 hover:underline dark:text-primary-500" routerLink="/auth/login">Login
+              here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

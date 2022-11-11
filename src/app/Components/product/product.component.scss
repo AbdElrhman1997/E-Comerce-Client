@@ -1,0 +1,35 @@
+@import '../../../styles.scss';
+.product {
+  height: fit-content;
+  text-align: center;
+  img {
+    width: 330px;
+    height: 330px;
+    cursor: pointer;
+  }
+  img:hover {
+    opacity: .9;
+  }
+  .prCategory,.prName,.prPrice {
+    margin: 7px auto;
+  }
+}
+.addToCart {
+  padding: 7px 10px;
+  color: $brandColor;
+  border: 3px solid $brandColor;
+  font-weight: 600;
+}
+.addToCart:hover {
+  background-color: $brandColor;
+  color: white;
+}
+@media (max-width:776px) {
+  .product {
+    margin-bottom: 40px;
+  }
+}
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background-color: $brandColor;
+}
+

@@ -1,0 +1,91 @@
+<section class="cart">
+  <div class="w-full h-full bg-black bg-opacity-95 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0"
+    id="chec-div">
+    <div
+      class="w-full absolute z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700"
+      id="checkout">
+      <div class="flex items-end lg:flex-row flex-col justify-end" id="cart">
+        <div
+          class="lg:w-1/2 md:w-8/12 w-full lg:px-8 lg:py-14 md:px-6 px-4 md:py-8 py-4 bg-white overflow-y-auto overflow-x-hidden lg:h-screen h-auto"
+          id="scroll">
+          <p class="lg:text-4xl text-3xl font-black leading-10 text-gray-800 pt-3">
+            Cart
+          </p>
+          <div *ngFor="let product of cartProducts"
+            class="md:flex items-strech py-8 md:py-10 lg:py-8 border-t border-gray-50">
+            <div class="md:w-4/12 2xl:w-1/4 w-full">
+              <img src="{{product.item.imgSrc}}" alt="" class="h-full object-center object-cover md:block hidden" />
+              <img src="{{product.item.imgSrc}}" alt="" class="md:hidden w-full h-full object-center object-cover" />
+            </div>
+            <div class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
+              <p class="text-base leading-3 text-gray-800 md:pt-0 pt-4">
+                {{product.item.category}}
+              </p>
+              <div class="flex items-center justify-between w-full pt-1">
+                <p class="text-lg font-black leading-none text-gray-800">
+                  {{product.item.name}}
+                </p>
+                <p class="text-lg font-black leading-none text-gray-800">
+                  quantity {{product.quantity}}
+                </p>
+                <!-- <input type="number" [(ngModel)]="amount"
+                  class="p-2 w-1/6 border border-gray-300 text-gray-900 text-sm"> -->
+              </div>
+              <p class="text-base leading-3 text-gray-800 md:pt-0 pt-4">
+                {{product.item.price|currency:'EGP'}}
+              </p>
+              <div class="flex items-center justify-between pt-5">
+                <div class="flex itemms-center">
+                  <p class="text-xs leading-3 underline text-gray-800 cursor-pointer">
+                    Add to favorites
+                  </p>
+                  <p class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer"
+                    (click)="removeProduct(product)">
+                    Remove
+                  </p>
+                </div>
+                <p class="text-base font-black leading-none text-gray-800">
+                  {{product.price|currency:'EGP'}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-96 md:w-8/12 w-full bg-gray-100 h-full">
+          <div
+            class="flex flex-col lg:h-screen h-auto lg:px-8 md:px-7 px-4 lg:py-20 md:py-10 py-6 justify-between overflow-y-auto">
+            <div>
+              <p class="lg:text-4xl text-3xl font-black leading-9 text-gray-800">
+                Summary
+              </p>
+              <div class="flex items-center justify-between pt-16">
+                <p class="text-base leading-none text-gray-800">Subtotal</p>
+                <p class="text-base leading-none text-gray-800">{{Price|currency:'EGP'}}</p>
+              </div>
+              <div class="flex items-center justify-between pt-5">
+                <p class="text-base leading-none text-gray-800">Shipping</p>
+                <p class="text-base leading-none text-gray-800">{{Shipping|currency:'EGP'}}</p>
+              </div>
+              <div class="flex items-center justify-between pt-5">
+                <p class="text-base leading-none text-gray-800">Tax</p>
+                <p class="text-base leading-none text-gray-800">{{Tax|currency:'EGP'}}</p>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center pb-6 justify-between lg:pt-5 pt-20">
+                <p class="text-2xl leading-normal text-gray-800">Total</p>
+                <p class="text-2xl font-bold leading-normal text-right text-gray-800">
+                  {{totalPrice|currency:'EGP'}}
+                </p>
+              </div>
+              <button (click)="finalProcces()"
+                class="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white">
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

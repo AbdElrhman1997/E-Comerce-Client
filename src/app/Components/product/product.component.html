@@ -1,0 +1,19 @@
+<ng-container class="product pb-5">
+  <img routerLink="/products/product/{{ product._id }}" [src]="product.imgSrc" />
+  <div class="prCategory text-gray-500 text-2xl">
+    {{ product.category }}
+  </div>
+  <div class="prName font-medium text-xl">{{ product.name }}</div>
+  <div class="prPrice font-semibold text-xl">
+    {{ product.price | currency: "EGP" }}
+  </div>
+  <button class="addToCart" (click)="isAdded=true" *ngIf="!isAdded">
+    ADD TO CART
+  </button>
+  <div class="flex justify-center" *ngIf="isAdded">
+    <input type="number" [(ngModel)]="amount" class="p-2 w-1/3 border border-gray-300 text-gray-900 text-sm">
+    <button class="addToCart" (click)="addToCart(product)">
+      ADD TO CART
+    </button>
+  </div>
+</ng-container>
