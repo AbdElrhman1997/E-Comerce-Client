@@ -22,11 +22,11 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loading = true;
-    const subs1 = this.productService.getAll().subscribe((data: any) => {
-      this.Products = [...data.data];
-      this.loading = false;
-    });
-    this.subcribtions.push(subs1);
+    // const subs1 = this.productService.getAll().subscribe((data: any) => {
+    //   this.Products = [...data.data];
+    //   this.loading = false;
+    // });
+    // this.subcribtions.push(subs1);
   }
 
   getAll(dropDown?: any) {
